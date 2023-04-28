@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness</title>
+    <link href="static/CSS/index.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="static/CSS/fitness.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="{{url_for('home')}}">NutriFit</a>
+        </div>
+        <label for="navbar-toggle" class="navbar-toggle-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="navbar-menu">
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('bmi')}}">BMI</a></li>
+            <li class="dropdown">
+                <a href="#">Services <i class="fa fa-caret-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{url_for('fitness')}}">Fitness</a></li>
+                    <li><a href="{{url_for('nutrition')}}">Nutrition</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="fitness-container">
+        <div class="fitness-card">
+            <img src="static/images/fatburner.jpg" alt="weight">
+            <div class="card-content">
+                <h3>Fat burner!</h3>
+                <h4>Are you worried about your weight?</h4>
+                <p>Fat burners contain natural ingredients, such as caffeine, green tea extract, and stimulants, that can boost energy, increase calorie burning, and reduce fat. For optimal results, use them alongside a healthy diet and exercise program.
+                </p>
+                <br>
+            </div>
+        </div>
+
+        <div class="fitness-card">
+            <img src="static/images/fitter.jpg" alt="fitter">
+            <div class="card-content">
+                <h3>Fitter Better!</h3>
+                <h4>Do you want become fit?</h4>
+                <p>Any individual need to have a workout routine that fits better with an individual's lifestyle may be more sustainable and effective, in this exercise involves experimenting with different types of workouts and gear to find what works best for an individual's unique needs and preferences.
+                </p>
+            </div>
+        </div>
+
+        <div class="fitness-card">
+            <img src="static/images/stressbuster.jpg" alt="People">
+            <div class="card-content">
+                <h3>Stress Buster!</h3>
+                <h4>Do you want to relieve your stress?</h4>
+                <p>Stress busters can be physical activities, relaxation techniques, or anything else that promotes a sense of calm and relaxation such as yoga and meditation which can help to manage stress and improve their overall well-being.
+                </p>
+                <br>
+            </div>
+        </div>
+
+        <div class="fitness-card">
+            <img src="static/images/muscle.jpg" alt="Animals">
+            <div class="card-content">
+                <h3>Muscle Hustle!</h3>
+                <h4>Do you want to add some muscle to your body</h4>
+                <p>Working out through resistance training, such as weightlifting, is a proven way to increase muscle mass. Adequate protein and rest are also important for muscle growth. As the muscles get stronger, the body becomes better at burning calories, making it an effective way to support weight loss goals.
+                </p>
+            </div>
+        </div>
+
+        <div class="fitness-card">
+            <img src="static/images/yoga.jpg" alt="Animals">
+            <div class="card-content">
+                <h3>Nuture your Posture!</h3>
+                <h4>Set your posture with Yoga Poses!</h4>
+                <p>Yoga combines physical postures, breathing exercises, and meditation to enhance emotional stability, mental acuity, and physical health. It has been practiced for thousands of years, offering several health benefits, such as improved cardiovascular health, flexibility, strength, and balance. Regular practice can be a fun and effective way to boost overall health and fitness.
+                </p>
+            </div>
+        </div>
+
+        <div class="fitness-card">
+            <img src="static/images/runforcause.jpg" alt="Animals">
+            <div class="card-content">
+                <h3>Run for a Cause!</h3>
+                <h4>Participate to Help NGOs</h4>
+                <p>Run for a cause mixes social contribution with physical exercise. The goal is to take part in running challenges or events like marathons, half-marathons, or 5Ks while also promoting and funding a specific cause or organization. Running for a good cause may be a fulfilling and enjoyable way to combine generosity and health.
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h4> Step up to a healthier body and change your life
+        </h4>
+        
+    </footer>
+</body>
+
+</html>

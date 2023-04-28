@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  background-image: url("../images/nutrition.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.nutrition-container {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.nutrition-card {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  width: calc(50% - 20px);
+  padding: 20px;
+  box-sizing: border-box;
+  height: 500px;
+}
+
+.nutrition-card:hover {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.nutrition-card img {
+  max-width: 100%;
+  height: 80%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 550px;
+    height: 250px;
+}
+
+.nutrition-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.nutrition-card p {
+  font-size: 1rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .nutrition-card {
+    width: 100%;
+    height: 50%;
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="static/CSS/login.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <title>NutriFit</title>
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username == "" || password == "") {
+                alert("Please enter your login details.");
+            } else {
+                window.location.href = "{{url_for('home')}}";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="#">
+                <!-- <img src="../images/logo.jpg" width="50" height="50" alt="logo"> -->
+                <h3>NutriFit </h3>
+            </a>
+        </div>
+        <label for="navbar-toggle" class="navbar-toggle-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="navbar-menu">
+            <!-- Add menu items here -->
+        </ul>
+    </nav>
+    <div class="container">
+        <form id="login-form" method="POST", action="{{url_for('login')}}">
+            <h1>LogIn Page</h1>
+            <label>Username : </label>
+            <input type="text" id="username" name="username"></input><br><br>
+            <label>Password : </label>
+            <input type="password" id="password" name="password"></input><br><br>
+            <input class="button" type="button" value="LOGIN" onclick="validateLogin()"></input>
+            <input class="button" type="button" value=" New User? SIGN UP " onclick="location.href = 'signup'"></input>
+        </form>
+    </div>
+    <footer>
+        <h4> Step up to a healthier body and change your life </h4>
+    </footer>
+</body>
+
+</html>

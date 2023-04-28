@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness</title>
+    <link href="static/CSS/index.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="static/CSS/nutrition.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="{{url_for('home')}}">NutriFit</a>
+        </div>
+        <label for="navbar-toggle" class="navbar-toggle-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="navbar-menu">
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('bmi')}}">BMI</a></li>
+            <li class="dropdown">
+                <a href="#">Services <i class="fa fa-caret-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{url_for('fitness')}}">Fitness</a></li>
+                    <li><a href="{{url_for('nutrition')}}">Nutrition</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="nutrition-container">
+        <div class="nutrition-card">
+            <img src="static/images/nutrifacts.jpg" alt="weight">
+            <div class="card-content">
+                <h3>Facts!!</h3>
+                <h4>Do you want to know about Nutrition facts?</h4>
+                <p>The study of nutrients and their role in supporting health is a part of nutrition. Energy is provided by nutrients including carbs, proteins, and lipids, whereas vitamins and minerals are necessary for cellular mechanisms. Through a healthy diet, nutrient shortages can be avoided or remedied.
+                </p>
+            </div>
+        </div>
+
+        <div class="nutrition-card">
+            <img src="static/images/balanceddiet.jpg" alt="fitter">
+            <div class="card-content">
+                <h3>Balance the Unbalance</h3>
+                <h4>Chek out the balanced Diet here</h4>
+                <p>Reducing your intake of processed foods, bad fats, and sugars can help lower your risk for chronic diseases. Additionally, maintaining a nutritious diet, such as the Healthy diet, and getting enough sleep will help you stay healthy. You may enhance your general health and wellness by concentrating on a balanced approach to eating and adopting tiny dietary changes.</p>
+            </div>
+        </div>
+
+        <div class="nutrition-card">
+            <img src="static/images/whattoandwhatnotto.jpg" alt="People">
+            <div class="card-content">
+                <h3>Do's and Don't's</h3>
+                <h4>What to do and What not to do?</h4>
+                <P><strong>Do's:</strong>
+                    Consume a range of whole foods, such as fresh fruit and vegetables, whole grains, fatty protein, and good fats and t o stay hydrated, consume lots of water.
+                    <br><strong>Don't:
+                    </strong>
+                    Nutrient deficiencies shouldn't be ignored because they can harm your health. Don't skip meals on eating to the point of becoming malnutrition. If you are looking for the nutrients you need, don't just rely on supplements.</P>
+            </div>
+        </div>
+
+        <div class="nutrition-card">
+            <img src="static/images/multinutrients.jpg" alt="Animals">
+            <div class="card-content">
+                <h3>Supplements</h3>
+                <h4>Add suitable supplements to your Diet</h4>
+                <p>For people who struggle to satisfy their nutritional demands through food alone, nutritional supplements can help fill in any nutrient gaps in a person's diet. In general, supplements can be a good way to improve nutrition, but they should be used in conjunction with a balanced diet and under the supervision of a healthcare provider.
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h4> Step up to a healthier body and change your life
+        </h4>
+        
+    </footer>
+
+</body>
+
+</html>

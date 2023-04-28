@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="static/CSS/index.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="static/CSS/aboutus.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="{{url_for('home')}}">NutriFit</a>
+        </div>
+        <label for="navbar-toggle" class="navbar-toggle-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="navbar-menu">
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li class="dropdown">
+            </li>
+            <li><a href="{{url_for('aboutus')}}">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="about-container">
+        <div class="profile">
+            <img class="profile-image" src="static/images/megh.jpg" alt="Profile image">
+            <div class="profile-description">
+                <h2>Meghana Rudraraju</h2>
+                <p>Graduate student pursuing Business Analytics and Information Systems at the University of South
+                    Florida. In India, I've been working as network consultant for 3 years. I have skills in Python,
+                    HTML, CSS. I worked on designing and styling the "Home" and navigation bar for this project.
+                </p>
+            </div>
+        </div>
+
+        <div class="profile">
+            <img class="profile-image" src="static/images/hiranmai.jpg" alt="Profile image">
+            <div class="profile-description">
+                <h2>Hiranmai Vallabhaneni</h2>
+                <p>Graduate Student at University of South Florida in Business Analytics & Information Systems. I've
+                    worked as systems engineer for overs 4.5 years in India. I have skills in Python, HTML, CSS. I
+                    worked on creating cards and footer.</p>
+            </div>
+        </div>
+
+        <div class="profile">
+            <img class="profile-image" src="static/images/gopinath.jpg" alt="Profile image">
+            <div class="profile-description">
+                <h2>Venkata Gopinath Ginjupalli</h2>
+                <p>Graduate Student at University of South Florida in Business Analytics & Information Systems. I've
+                    worked as Business Management Analyst for 2 years in India. I'm skilled in Python, R, SQL, HTML,
+                    CSS. I worked on creating Nutrition page and dropdown in navbar</p>
+            </div>
+        </div>
+
+        <div class="profile">
+            <img class="profile-image" src="static/images/rohith.jpg" alt="Profile image">
+            <div class="profile-description">
+                <h2>Himarohith Reddy Thammuneni</h2>
+                <p>Graduate Student at University of South Florida in Business Analytics & Information Systems. I've
+                    worked as Data Scientist for 4 years in India. I'm skilled in Python, ML, R, SQL, HTML, CSS. I
+                    worked on creating Fitness page and integrated all pages </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h4> Step up to a healthier body and change your life
+        </h4>
+        
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0"></script>
+    <link href="static/CSS/index.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <title>NutriFit</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="#">
+                <!-- <img src="../images/nutrifood.jpg" width="50" height="50" alt="logo"> -->
+                <h3>NutriFit </h3>
+            </a>
+        </div>
+        <label for="navbar-toggle" class="navbar-toggle-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="navbar-menu">
+            <li><a href="{{url_for('index')}}">Sign Out</a></li>
+            <li><a href="">Home</a></li>
+            <li><a href="{{url_for('bmi')}}">BMI</a></li>
+            <li class="dropdown">
+                <a href="{{url_for('home')}}" class="dropdown-button">Services <i class="fa fa-caret-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{url_for('fitness')}}">Fitness</a></li>
+                    <li><a href="{{url_for('nutrition')}}">Nutrition</a></li>
+                </ul>
+            </li>
+            <li><a href="{{url_for('aboutus')}}">About Us</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+            <h1>       Welcome to NutriFit</h1>
+        <h3 class="sub-head">Are you ready to transform your body?
+        </h3>
+        <div class="buttons">
+            <button onclick="location.href = 'fitness'">Fitness</button>
+            <button onclick="location.href = 'nutrition'">Nutrition</button>
+        </div>
+   
+    </div>
+    <div
+     style="background: none; background-color: rgb(230, 225, 225); width: 500px;height:500px;">
+<h4>Comparision of subscribers joined in each year</h4>
+        <svg id="subscribers" ></svg>
+        
+    </div>
+   
+    <footer>
+        <h4> Step up to a healthier body and change your life
+        </h4>
+        
+    </footer>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+
+    <script>
+        var data = [
+  { year: 2018, count: 20000 },
+  { year: 2019, count: 40000},
+  { year: 2020, count: 45000 },
+  { year: 2021, count: 48000 },
+  { year: 2022, count: 50000 }
+];
+
+
+
+ // set the dimensions and margins of the graph
+ var margin = { top: 30, right: 30, bottom: 70, left: 60 },
+    width = 460 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+
+// Create the SVG container
+var svg = d3.select("#subscribers")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// Define the scales for the x-axis and y-axis
+var x = d3.scaleBand()
+  .range([0, width])
+  .padding(0.1);
+
+var y = d3.scaleLinear()
+  .range([height, 0]);
+
+var color = d3.scaleOrdinal()
+    .range(["#1f77b4", "#aec7e8", "#7b6888","#c5b0d5", "#f7b6d2"]);
+
+
+// Define the axes
+var xAxis = d3.axisBottom(x);
+var yAxis = d3.axisLeft(y);
+
+
+  // Set the domain of the x-axis and y-axis scales
+x.domain(data.map(function(d) { return d.year; }));
+y.domain([0, d3.max(data, function(d) { return d.count; })]);
+
+  
+// Draw the x-axis and y-axis
+svg.append("g")
+  .attr("class", "x-axis")
+  .attr("transform", "translate(0," + height + ")")
+  .call(xAxis)
+  .append("text")
+  .attr("class", "axis-label")
+  .attr("x", width / 2)
+  .attr("y", margin.bottom - 10)
+  .text("Year");
+
+svg.append("g")
+  .attr("class", "y-axis")
+  .call(yAxis)
+  .append("text")
+  .attr("class", "axis-label")
+  .attr("transform", "rotate(-90)")
+  .attr("x", -height / 2)
+  .attr("y", -margin.left + 20)
+  .text("Count of subscribers");
+
+
+
+// Draw the bars
+svg.selectAll(".bar")
+  .data(data)
+  .enter().append("rect")
+  .attr("class", "bar")
+  .attr("x", function(d) { return x(d.year); })
+  .attr("y", function(d) { return y(d.count); })
+  .attr("width", x.bandwidth())
+  .attr("fill", function(d) { return color(d.count); })// set the fill color based on the data
+  .attr("height", function(d) { return height - y(d.count); });
+
+    </script>
+ <script src="https://d3js.org/d3.v6.min.js"></script>
+
+
+ <!-- Include D3 JS -->
+ 
+ <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+</body>
+
+</html>

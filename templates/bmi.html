@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="static/CSS/bmicss.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <title>NutriFit</title>
+
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+           
+            </a>
+        </div>
+        <label for="navbar-toggle" class="navbar-toggle-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="navbar-menu">
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Services <i class="fa fa-caret-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{url_for('fitness')}}">Fitness</a></li>
+                    <li><a href="{{url_for('nutrition')}}">Nutrition</a></li>
+                </ul>
+            </li>
+        </ul>    
+    </nav>
+    <div class="container">
+        	<h1>BMI Calculator</h1>
+	<form>
+		<label class="textlogin">Weight (in kg):</label>
+		<input type="text" name="weight" id="weight" required> <br/>
+                <br/>
+		<label class="textlogin">Height (in cm):</label>
+		<input type="text" name="height" id="height" required><br/>
+                <br/> 
+		<input type="submit" value="Calculate" onclick="calculateBMI()"><br/>
+                 <br/>
+		<label class="textloginbmi">BMI:</label>
+		<input type="text" name="bmi" id="bmi" readonly><br/>
+                <br/>   
+		<label class="textlogin">Interpretation:</label>
+		<input type="text" name="interpretation" id="interpretation" readonly><br/>
+	</form>
+	<script type="text/javascript">
+		function calculateBMI(){
+                       
+			var weight = document.getElementById("weight").value;
+			var height = document.getElementById("height").value/100;
+			var bmi = weight/(height*height);
+			document.getElementById("bmi").value = bmi.toFixed(2);
+			if(bmi < 18.5){
+				document.getElementById("interpretation").value = "Underweight";
+			}
+			else if(bmi >= 18.5 && bmi <= 24.9){
+				document.getElementById("interpretation").value = "Normal weight";
+			}
+			else if(bmi >= 25 && bmi <= 29.9){
+				document.getElementById("interpretation").value = "Overweight";
+			}
+			else{
+				document.getElementById("interpretation").value = "Obese";
+			}
+			
+                       event.preventDefault()
+}
+</script>
+
+        
+    </div>
+    <footer>
+        <h4> Step up to a healthier body and change your life
+        </h4>
+    </footer>
+    </div>
+
+</body>
+
+</html>
